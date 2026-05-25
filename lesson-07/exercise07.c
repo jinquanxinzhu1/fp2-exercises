@@ -3,7 +3,8 @@
  * テーマ: malloc を使ってスクーミーの LED シーケンスを動的管理する
  *
  * 【課題】
- * スクーミーの LED（ピン: 10, 5, 15, 19）を「何番ピンを何ms光らせるか」
+ * スクーミーの LED（ピン: 10, 5, 15, 19）を
+ * 「何番ピンを何ms光らせるか」
  * というシーケンスとして記録するプログラムを完成させよ。
  *
  * 【ルール】
@@ -28,35 +29,36 @@ int main(void) {
     scanf("%d", &n);
 
     /* TODO 1: LedPattern を n 個分 malloc で確保する */
-    LedPattern *patterns = malloc(n * sizeof(LedPattern));
+    /* ヒント: malloc(個数 * sizeof(型))  */
+    LedPattern *patterns = /* ここを書く */;
 
     /* TODO 2: NULL チェック（確保失敗への対処） */
-    if (patterns == NULL) {
+    if (/* ここを書く */) {
         fprintf(stderr, "メモリ確保に失敗しました\n");
         return 1;
     }
 
     /* TODO 3: n 個分のパターンを入力する */
     for (int i = 0; i < n; i++) {
+
         printf("パターン%d — ピン番号: ", i + 1);
-        scanf("%d", &patterns[i].pin);
+        scanf("%d", /* ここを書く */);
 
         printf("パターン%d — 点灯時間(ms): ", i + 1);
-        scanf("%d", &patterns[i].duration);
+        scanf("%d", /* ここを書く */);
     }
 
     /* TODO 4: 登録したパターンを順番に表示する */
     printf("\n--- 登録した LED シーケンス ---\n");
 
     for (int i = 0; i < n; i++) {
+
         printf("パターン%d: ピン%dを%dms点灯\n",
-               i + 1,
-               patterns[i].pin,
-               patterns[i].duration);
+               /* ここを書く */);
     }
 
     /* TODO 5: malloc で確保したメモリを解放する */
-    free(patterns);
+    /* ここを書く */
 
     printf("\nプログラム終了\n");
 
